@@ -1,6 +1,6 @@
 # Synapse
 
-> Repo for hacking tools
+> Repo for {Hacking Tools}
 
 # Get files
 ## IEX (Doesnt touch disk - Helps to bypass AMSI/Applocker)
